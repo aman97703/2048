@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  gap: 40px;
+}
+#board {
+  width: 400px;
+  height: 400px;
+  background-color: #bbada0;
+  border-radius: 8px;
+  border: 6px solid #bbada0;
+  display: flex;
+  flex-wrap: wrap;
+  transition: all 0.2s ease;
+}
+header {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.score-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+header h1 {
+  color: #776e65;
+  font-size: 4rem;
+}
+footer {
+  padding: 0 20px;
+}
+footer > p {
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+}
+.score-container > div {
+  background-color: #bbada0;
+  border-radius: 8px;
+  padding: 10px 15px;
+  color: white;
+}
+.score-container > div > p {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 5px;
+  transition: all 0.2s ease;
+}
+
+.tile {
+  width: 97px;
+  height: 97px;
+  background-color: rgba(238, 228, 218, 0.35);
+  border: 5px solid #bbada0;
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0),
+    inset 0 0 0 1px rgba(255, 255, 255, 0);
+  color: #776e65;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.x2 {
+  background-color: #eee4da;
+  color: #727371;
+}
+
+.x4 {
+  background-color: #ece0ca;
+  color: #727371;
+}
+
+.x8 {
+  background-color: #f4b17a;
+  color: white;
+}
+
+.x16 {
+  background-color: #f59575;
+  color: white;
+}
+
+.x32 {
+  background-color: #f57c5f;
+  color: white;
+}
+
+.x64 {
+  background-color: #f65d3b;
+  color: white;
+}
+
+.x128 {
+  background-color: #edce71;
+  color: white;
+}
+
+.x256 {
+  background-color: #edcc63;
+  color: white;
+}
+
+.x512 {
+  background-color: #edc651;
+  color: white;
+}
+
+.x1024 {
+  background-color: #eec744;
+  color: white;
+}
+
+.x2048 {
+  background-color: #ecc230;
+  color: white;
+}
+
+.x4096 {
+  background-color: #fe3d3d;
+  color: white;
+}
+
+.x8192 {
+  background-color: #ff2020;
+  color: white;
+}
