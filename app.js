@@ -10,6 +10,12 @@ window.onload = function () {
 
 const startGame = () => {
   board = new Array(rows).fill(0).map(() => new Array(column).fill(0));
+  // board = [
+  //   [512, 1024, 512, 256],
+  //   [256, 128, 64, 32],
+  //   [16, 8, 4, 2],
+  //   [8, 16, 32, 64],
+  // ];
   score = 0;
 
   for (let r = 0; r < rows; r++) {
@@ -25,11 +31,23 @@ const startGame = () => {
   setTwo();
 };
 
+const resetGame = () => {
+  document.getElementById("board").innerHTML = "";
+  board = [
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+  ];
+  startGame();
+};
+
 const checkWin = () => {
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < column; c++) {
       if (board[r][c] === 2048) {
         alert("Congratulations You have won!");
+        resetGame();
         return true;
       }
     }
@@ -69,6 +87,7 @@ const checkLose = () => {
     score = 0;
     localStorage.setItem("bestScore", bestScore);
   }
+  resetGame();
   return true;
 };
 
@@ -193,27 +212,23 @@ const slideDown = () => {
 document.addEventListener("keyup", (e) => {
   if (e.key === "ArrowLeft") {
     slideLeft();
-    if (checkWin()) {
-      alert("Congratulations You have won!");
-    }
+    if (checkWin()) return;
+    if (checkLose()) return;
     setTwo();
   } else if (e.key === "ArrowRight") {
     slideRight();
-    if (checkWin()) {
-      alert("Congratulations You have won!");
-    }
+    if (checkWin()) return;
+    if (checkLose()) return;
     setTwo();
   } else if (e.key === "ArrowUp") {
     slideUp();
-    if (checkWin()) {
-      alert("Congratulations You have won!");
-    }
+    if (checkWin()) return;
+    if (checkLose()) return;
     setTwo();
   } else if (e.key === "ArrowDown") {
     slideDown();
-    if (checkWin()) {
-      alert("Congratulations You have won!");
-    }
+    if (checkWin()) return;
+    if (checkLose()) return;
     setTwo();
   }
   document.getElementById("score").innerText = score;
